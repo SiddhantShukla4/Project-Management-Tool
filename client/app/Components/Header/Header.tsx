@@ -1,7 +1,7 @@
 "use client";
 import { useTasks } from "@/context/taskContext";
 import { useUserContext } from "@/context/userContext";
-import { github, moon, profile } from "@/utils/Icons";
+import { github, profile } from "@/utils/Icons";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -56,7 +56,7 @@ function Header() {
 
         <div className="flex gap-4 items-center">
           <Link
-            href="github link"
+            href="https://github.com/SiddhantShukla4/Project-Management-Tool"
             passHref
             target="_blank"
             rel="noopener noreferrer"
