@@ -241,21 +241,19 @@ export const verifyUser = asyncHandler(async (req, res) => {
       .json({ message: "Invalid or expired verification token" });
   }
 
-  //find user with the user id in the token
   const user = await User.findById(userToken.userId);
 
   if (user.isVerified) {
-    // 400 Bad Request
+
     return res.status(400).json({ message: "User is already verified" });
   }
 
-  // update user to verified
   user.isVerified = true;
   await user.save();
   res.status(200).json({ message: "User verified" });
 });
 
-// forgot password
+
 export const forgotPassword = asyncHandler(async (req, res) => {
   const { email } = req.body;
 
